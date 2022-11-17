@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:tc:mariadb:10.3.36://localhost:3306///test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    dbcp2:
+      driver: org.mariadb.jdbc.Driver
+      test-on-borrow: true
+      validation-query: SELECT 1
+      max-total: 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
