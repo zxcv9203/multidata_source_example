@@ -15,10 +15,10 @@ public class ProductResponse {
 
     private String name;
 
-    private BigDecimal price;
+    private String price;
 
     @QueryProjection
-    public ProductResponse(Long id, String name, BigDecimal price) {
+    public ProductResponse(Long id, String name, String price) {
         this.id = id;
         this.name = name;
         this.price = price;

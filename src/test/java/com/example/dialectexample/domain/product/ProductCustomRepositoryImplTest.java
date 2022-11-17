@@ -29,8 +29,31 @@ class ProductCustomRepositoryImplTest extends RepositoryTest {
 
                 // when
                 List<ProductResponse> products = productRepository.getProducts();
+
                 // then
                 products.forEach(System.out::println);
+            }
+        }
+    }
+
+    @Nested
+    @DisplayName("getProductById 메서드는")
+    class Describe_getProductById {
+
+        @Nested
+        @DisplayName("id 값을 전달하면")
+        class Context_with_id {
+
+            @Test
+            @DisplayName("Optional로 감싼 ProductResponse를 반환한다.")
+            void it_returns_Optional_ProductResponse() {
+                // given
+
+                // when
+                ProductResponse product = productRepository.getProductById(1L)
+                    .orElseThrow(() -> new RuntimeException("product ID가 없습니다!!"));
+                // then
+                System.out.println(product);
             }
         }
     }
