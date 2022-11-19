@@ -19,6 +19,7 @@ services:
       - ${LOCAL_MASTER_REPOSITORY_PATH}:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root1234!
+      MYSQL_DATABASE: master
   slave-db:
     image: ${DB_IMAGE}
     container_name: ${SLAVE_DB_NAME}
@@ -29,3 +30,4 @@ services:
       - ${LOCAL_SLAVE_REPOSITORY_PATH}:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root1234!
+      MYSQL_DATABASE: slave
