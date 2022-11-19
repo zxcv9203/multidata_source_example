@@ -1,4 +1,4 @@
-package com.example.dialectexample.config;
+package com.example.dialectexample.config.datasource;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import javax.persistence.EntityManager;

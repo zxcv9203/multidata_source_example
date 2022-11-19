@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    master:
+      hikari:
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://master:3306/master?serverTimezone=asia/Seoul
+        username: root
+        password: root1234!
+    slave:
+      hikari:
+        driver-class-name: org.mariadb.jdbc.Driver
+        jdbc-url: jdbc:mariadb://slave:3306/slave?serverTimezone=asia/Seoul
+        username: root
+        password: root1234!
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: com.example.dialectexample.config.dialect.MariaDBCustomDialect
+        hdm2ddl.auto: none
+        format_sql: true

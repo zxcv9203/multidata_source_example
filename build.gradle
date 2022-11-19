@@ -8,7 +8,10 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    // querydsl
     id 'com.ewerk.gradle.plugins.querydsl' version '1.0.10'
+    // jib
+    id 'com.google.cloud.tools.jib' version '3.2.1'
 }
 
 group = 'com.example'
@@ -73,4 +76,24 @@ configurations {
         extendsFrom annotationProcessor
     }
     querydsl.extendsFrom compileClasspath
+}
+
+// jib 설정
+jib {
+    from {
+        image = 'openjdk:11.0.16-slim'
+        platforms {
+            platform {
+                architecture = "arm64"
+                os = "linux"
+            }
+        }
+    }
+    to {
+        image = "zxcv9203/${project.name.toLowerCase()}"
+        tags = ["${project.version.toString().toLowerCase()}"]
+    }
+    container {
+        jvmFlags = ['-Xms512m']
+    }
 }

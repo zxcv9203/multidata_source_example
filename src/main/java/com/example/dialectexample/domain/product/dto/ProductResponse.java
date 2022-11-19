@@ -1,7 +1,6 @@
 package com.example.dialectexample.domain.product.dto;
 
 import com.querydsl.core.annotations.QueryProjection;
-import java.math.BigDecimal;
 import java.util.StringJoiner;
 import lombok.AccessLevel;
 import lombok.Getter;
