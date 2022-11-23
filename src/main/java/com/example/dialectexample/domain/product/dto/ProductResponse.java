@@ -3,11 +3,14 @@ package com.example.dialectexample.domain.product.dto;
 import com.querydsl.core.annotations.QueryProjection;
 import java.util.StringJoiner;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
+@Builder
 public class ProductResponse {
 
     private Long id;

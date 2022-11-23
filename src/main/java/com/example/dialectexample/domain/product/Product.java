@@ -8,11 +8,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "product")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+@Builder
+@Getter
 public class Product {
 
     @Id
@@ -23,6 +29,11 @@ public class Product {
 
     private BigDecimal price;
 
-    @Column(length = 1000)
-    private String description;
+    public void changeName(String name) {
+        this.name = name;
+    }
+
+    public void changePrice(BigDecimal price) {
+        this.price = price;
+    }
 }
