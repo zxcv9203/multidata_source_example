@@ -10,7 +10,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime
   master-db:
-    image: ${DB_IMAGE}
+    image: ${MASTER_DB_IMAGE}
     container_name: ${MASTER_DB_NAME}
     restart: always
     ports:
@@ -19,9 +19,9 @@ services:
       - ${LOCAL_MASTER_REPOSITORY_PATH}:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root1234!
-      MYSQL_DATABASE: master
+      MYSQL_DATABASE: example
   slave-db:
-    image: ${DB_IMAGE}
+    image: ${SLAVE_DB_IMAGE}
     container_name: ${SLAVE_DB_NAME}
     restart: always
     ports:
@@ -30,4 +30,4 @@ services:
       - ${LOCAL_SLAVE_REPOSITORY_PATH}:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: root1234!
-      MYSQL_DATABASE: slave
+      MYSQL_DATABASE: example
