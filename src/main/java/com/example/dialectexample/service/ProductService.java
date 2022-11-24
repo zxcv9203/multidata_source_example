@@ -6,7 +6,6 @@ import com.example.dialectexample.domain.product.dto.CreateProductRequest;
 import com.example.dialectexample.domain.product.dto.ProductResponse;
 import com.example.dialectexample.domain.product.dto.UpdateProductRequest;
 import java.util.List;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

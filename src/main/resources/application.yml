@@ -3,13 +3,13 @@ spring:
     master:
       hikari:
         driver-class-name: org.mariadb.jdbc.Driver
-        jdbc-url: jdbc:mariadb://master:3306/master?serverTimezone=asia/Seoul
+        jdbc-url: jdbc:mariadb://master:3306/example?serverTimezone=asia/Seoul
         username: root
         password: root1234!
     slave:
       hikari:
         driver-class-name: org.mariadb.jdbc.Driver
-        jdbc-url: jdbc:mariadb://slave:3306/slave?serverTimezone=asia/Seoul
+        jdbc-url: jdbc:mariadb://slave:3306/example?serverTimezone=asia/Seoul
         username: root
         password: root1234!
   jpa:
